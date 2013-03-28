@@ -23,11 +23,15 @@ Both size and start index defined at compile-time.
        // 2 is the starting index, 4 is the number of items
        // this line generates no instructions and does not copy data
        // It just tells the compiler how to interpret the bits
-       array<int,4> subvals = slice<2,4>(vals);
+       // Does not compile if the new array exceeds the old one.
+       array<int,4>& subvals = slice<2,4>(vals);
  
        // prints "30 40 50 60"
        for( int v : subvals )
           cout<< v << " ";
+
+       // works with auto too
+       auto& mySlice = slice<0,2>(subvals)
     }
 
 example #2
