@@ -55,8 +55,7 @@ Size defined at compile-time, but start index defined at runtime.
         
         int index;
         cin>> index;
-        // afaik no other way to do this than with a copy 
-        // (or pointer, but that is what we try to avoid)
+        // afaik no other way to do this than with a copy (or pointer)
         auto test = slice<5>(haystack,index);
 
         if( needle == test )
