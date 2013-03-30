@@ -10,9 +10,9 @@ std::array<T,END-START>& slice( std::array<T,ORIG>& arr) {
 }
 
 
-
 template<size_t LEN, class T, size_t ORIG>
-std::array<T,LEN>& slice( std::array<T,ORIG> arr, size_t start) {
+std::array<T,LEN> slice( std::array<T,ORIG> arr, size_t start) {
+
     if( start + LEN >= ORIG )
         throw std::range_error("slice: array index out of bounds");
     if( start < 0 )

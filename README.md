@@ -32,7 +32,7 @@ Both size and start index defined at compile-time.
           cout<< v << " ";
 
          // this performs a copy (no '&' after auto)
-         // computing array.size() at compiletimeis not widely supported yet
+         // computing array.size() at compiletime is not widely supported yet
        auto pizza = slice<2,subvals.size()>(subvals)    
 
          // prints "50 60"
@@ -44,4 +44,23 @@ example #2
 ----------
 Size defined at compile-time, but start index defined at runtime.
 
+    #include "slice.hpp"
+    #include <iostream>
 
+    using namespace std;
+
+    int main() {
+        array<char,13> haystack = {"Hello world!"};
+        array<char,5>  needle   = {'w','o','r','l','d'};
+        
+        int index;
+        cin>> index;
+        // afaik no other way to do this than with a copy 
+        // (or pointer, but that is what we try to avoid)
+        auto test = slice<5>(haystack,index);
+
+        if( needle == test )
+            cout<< "Needle present at index" << endl;
+        else
+            cout<< "It's not there..." << endl;
+    }
