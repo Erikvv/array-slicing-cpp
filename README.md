@@ -55,7 +55,8 @@ Size defined at compile-time, but start index defined at runtime.
         
         int index;
         cin>> index;
-         /* afaik no other way to do this than with a copy 
+         /* 5 is the lenght, index is the start index
+          * afaik no other way to do this than with a copy 
           * (or pointer, i might add a method for that)
           * throws std::range_error if it exceeds the bounds of the parent array */
         auto test = slice<5>(haystack,index);
