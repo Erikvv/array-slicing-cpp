@@ -12,6 +12,7 @@ example #1
 ----------
 Both size and start index defined at compile-time.
 
+```cpp
     #include "slice.hpp"
     #include <iostream>
 
@@ -39,11 +40,13 @@ Both size and start index defined at compile-time.
        for( int w : pizza )
             cout<< w << " ";
     }
+```
 
 example #2
 ----------
 Size defined at compile-time, but start index defined at runtime.
 
+```cpp
     #include "slice.hpp"
     #include <iostream>
 
@@ -66,3 +69,4 @@ Size defined at compile-time, but start index defined at runtime.
         else
             cout<< "It's not there..." << endl;
     }
+```
