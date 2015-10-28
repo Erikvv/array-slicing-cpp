@@ -21,11 +21,13 @@ Both size and start index defined at compile-time.
     int main() {
        array<int,8> vals = { 10, 20, 30, 40, 50, 60, 70, 80 };
  
-       /*  2 is the starting index, 6 is the upper index.
+       /*  
+        *  2 is the starting index, 6 is the upper index.
         *  The upper index is an open interval, so vals[6] is not included.
         *  This line generates no instructions and does not copy data,
         *  It just tells the compiler how to interpret the bits.
-        *  Does not compile if the new array exceeds the range of the old one. */
+        *  Does not compile if the new array exceeds the range of the old one. 
+        */
        auto& subvals = slice<2,6>(vals);   // type: array<int,4>&
  
          // prints "30 40 50 60"
@@ -58,10 +60,13 @@ Size defined at compile-time, but start index defined at runtime.
         
         int index;
         cin>> index;
-         /* 5 is the lenght, index is the start index
+        
+         /* 
+          * 5 is the lenght, index is the start index
           * afaik no other way to do this than with a copy 
           * (or pointer, I might add a method for that)
-          * throws std::range_error if it exceeds the bounds of the parent array */
+          * throws std::range_error if it exceeds the bounds of the parent array 
+          */
         auto test = slice<5>(haystack,index);
 
         if( needle == test )
